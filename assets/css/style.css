@@ -1,0 +1,356 @@
+/* Global Styles */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #ffffff; /* Light background for contrast */
+  color: #ffffff; /* Dark text for readability */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+/* Default styles (mobile first) */
+.logo {
+  height: 80px !important; /* Reduce from 150px */
+  width: auto;
+}
+
+/* Reduce navbar vertical padding */
+.navbar {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+/* Center the brand/logo */
+.navbar .navbar-brand {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+}
+
+.navbar-nav .nav-link {
+  padding: 0.5rem 1rem; /* Reduce top/bottom padding */
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Tablet (≥ 768px) */
+@media (min-width: 768px) {
+  .logo {
+    height: 50px;
+  }
+  .navbar-nav .nav-link {
+    font-size: 1.05rem;
+    padding: 0.5rem 1.25rem;
+  }
+}
+
+/* Laptop (≥ 992px) */
+@media (min-width: 992px) {
+  .logo {
+    height: 60px;
+  }
+  .navbar-nav .nav-link {
+    font-size: 1.1rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+/* Desktop (≥ 1200px) */
+@media (min-width: 1200px) {
+  .logo {
+    height: 70px;
+  }
+  .navbar-nav .nav-link {
+    font-size: 1.15rem;
+    padding: 0.5rem 1.75rem;
+  }
+}
+
+/* INDEX BODY */
+
+.hero-section {
+  height: 100vh; /* Full screen height */
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  position: relative; /* For absolute positioning of pseudo-elements */
+
+  /* background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><rect width="40" height="40" fill="%23e8eaf6"/><circle cx="20" cy="20" r="2" fill="%23c5cae9"/></svg>'); */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+@media (max-width: 991.98px) {
+  .hero-content .display-4 {
+    font-size: 2.2rem;
+  }
+  .hero-content h3 {
+    font-size: 1.2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-section {
+    height: auto;
+    min-height: 80vh;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .hero-content {
+    min-height: 0;
+    padding: 0 0.5rem;
+  }
+  .hero-content .display-4 {
+    font-size: 1.5rem;
+  }
+  .hero-content h3 {
+    font-size: 1rem;
+  }
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+}
+
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+/* Desktop: Fixed vertical sidebar */
+.social-sidebar {
+  position: fixed;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  z-index: 1050;
+}
+
+.social-icon img {
+  width: 28px;
+  height: 28px;
+  filter: grayscale(1);
+  opacity: 0.8;
+  transition: filter 0.2s, opacity 0.2s, transform 0.2s;
+}
+
+.social-icon:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* Mobile: Horizontal icons in navbar */
+.navbar-social-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* Hide sidebar on mobile, show on desktop */
+@media (max-width: 991.98px) {
+  .social-sidebar {
+    display: none !important;
+  }
+}
+
+/* ABOUT */
+
+/* About Modal Custom Styles */
+.about-modal-left {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about-modal-right {
+  min-height: 100%;
+  background: #181a1b !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about-modal-right .form-control {
+  background: #181a1b !important;
+  color: #fff;
+  border-color: #444;
+}
+.about-modal-right .form-control:focus {
+  background: #222 !important;
+  color: #fff;
+  border-color: #cc275e;
+  box-shadow: none;
+}
+@media (max-width: 767.98px) {
+  .about-modal-left,
+  .about-modal-right {
+    min-height: unset;
+    padding: 2rem 1rem !important;
+  }
+}
+
+/* Make the modal wider on large screens */
+@media (min-width: 992px) {
+  .modal-lg {
+    max-width: 1100px; /* or 1200px for even wider */
+  }
+  .about-modal-left,
+  .about-modal-right {
+    padding: 3rem 2.5rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .modal-dialog.modal-lg {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+  }
+  .modal-content {
+    height: 100%;
+  }
+  .about-modal-left,
+  .about-modal-right {
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .row.g-0.h-100 {
+    height: 100%;
+  }
+}
+
+/* Large faded background words for About/Contact modal */
+.modal-bg-word {
+  position: absolute;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  opacity: 0.13;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 0;
+}
+
+.about-modal-left .about-bg {
+  top: 2rem;
+  left: 40%;
+  transform: translateX(-50%);
+  font-size: 15vw;
+  color: #160f0f;
+  opacity: 0.18;
+}
+
+.about-modal-right .contact-bg {
+  bottom: 0.5rem;
+  right: 2.5rem;
+  left: 30%;
+  top: auto;
+  transform: translateX(45%);
+  font-size: 15vw;
+  color: #fff;
+  opacity: 0.1;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 991.98px) {
+  .about-modal-left .about-bg,
+  .about-modal-right .contact-bg {
+    display: none !important;
+  }
+}
+
+/* Project Cards: Only in the #projects section */
+#projects .card {
+  background: #fff;
+  border: 1.5px solid #ececec;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(60, 60, 60, 0.13),
+    0 2px 8px rgba(60, 60, 60, 0.09); /* <-- updated shadow */
+  transition: box-shadow 0.2s, border-color 0.2s;
+  min-height: 370px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#projects .card:hover {
+  box-shadow: 0 12px 40px rgba(60, 60, 60, 0.18),
+    0 4px 16px rgba(60, 60, 60, 0.13);
+  border-color: #e53945;
+}
+
+#projects .card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+#projects .card-text {
+  font-size: 1.05rem;
+}
+
+#projects .badge {
+  font-size: 0.95rem;
+  border-radius: 0.7rem;
+  border: 1px solid #e0e0e0;
+  background: #f8f9fa;
+  color: #222;
+  font-weight: 500;
+}
+
+#projects .btn-danger {
+  background: #e53945;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+#projects .btn-outline-dark {
+  border: 1.5px solid #222;
+  color: #222;
+  background: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+#projects .btn-outline-dark:hover {
+  background: #222;
+  color: #fff;
+}
+
+/* Responsive tweaks for project cards */
+@media (max-width: 767.98px) {
+  #projects .card {
+    min-height: 320px;
+    border-radius: 1rem;
+  }
+  #projects .card-title {
+    font-size: 1.1rem;
+  }
+}
