@@ -94,10 +94,10 @@
 
 
             <!-- Projects Section: Clean, Responsive, Minimalist -->
-            <section class="container my-5" id="projects">
+            <!-- <section class="container my-5" id="projects">
                 <h2 class="text-center text-dark fw-bold mb-5" style="font-size:2.8rem;">Projects</h2>
                 <div class="row g-4 justify-content-center mb-5">
-                    <!-- Project Card Example -->
+                    
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card h-100 border-0 rounded-4">
                             <img src="assets/pictures/portfolio.svg" class="card-img-top rounded-top-4"
@@ -181,7 +181,7 @@
                 </div>
 
                 <div class="row g-4 justify-content-center">
-                    <!-- Project Card Example -->
+                  
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card h-100  border-0 rounded-4">
                             <img src="assets/pictures/project1.jpg" class="card-img-top rounded-top-4"
@@ -248,9 +248,15 @@
                         </div>
                     </div>
                 </div>
+            </section> -->
+
+
+            <section class="container my-5" id="projects">
+                <h2 class="text-center text-dark fw-bold mb-5" style="font-size:2.8rem;">Projects</h2>
+                <div id="projectsGrid" class="row g-4 justify-content-center mb-5">
+                    <!-- Project cards will be injected here by JS -->
+                </div>
             </section>
-
-
 
         </div>
 
@@ -353,7 +359,7 @@
                         class="col-12 col-md-5 add-project-image-col d-flex flex-column align-items-center justify-content-center p-4">
                         <label for="projectImageInput" class="w-100 text-center d-flex flex-column align-items-center">
                             <div class="add-project-image-wrapper mb-3">
-                                <img id="projectImagePreview" src="assets/pictures/placeholder.svg" alt="Project Image"
+                                <img id="projectImagePreview" src="assets/icons/placeholder.svg" alt="Project Image"
                                     class="img-fluid rounded-4 shadow-sm"
                                     style="max-height:260px; min-height:120px; min-width:120px; object-fit:cover; background:#e0e0e0;">
                             </div>
@@ -542,32 +548,9 @@
         </div>
     </div>
 
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-            apiKey: "AIzaSyBpGvpKdoDraeGXtE_pvfvv0W_iD1At-TQ",
-            authDomain: "portfolio-3a566.firebaseapp.com",
-            projectId: "portfolio-3a566",
-            storageBucket: "portfolio-3a566.firebasestorage.app",
-            messagingSenderId: "501875707207",
-            appId: "1:501875707207:web:5ceeb81e00119009a49062",
-            measurementId: "G-0HM297C4Z7"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-    </script>
-
+    <script type="module" src="assets/js/module.js"></script>
     <script src="assets/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/style.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

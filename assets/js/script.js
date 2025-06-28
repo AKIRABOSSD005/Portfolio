@@ -1,7 +1,3 @@
-// Function for reloading the page
-function reloadPage() {
-    window.location.reload();
-}
 
 // Highlight the active page in the navbar
 document.addEventListener("DOMContentLoaded", function () {
@@ -134,3 +130,89 @@ document.getElementById('projectImageInput').addEventListener('change', function
 document.querySelector('label[for="projectImageInput"] button').onclick = function () {
     document.getElementById('projectImageInput').click();
 };
+
+
+
+// Example project data array
+const projects = [
+    {
+        title: "Portfolio Website",
+        description: "A personal portfolio website built to showcase my work and skills.",
+        image: "assets/pictures/portfolio.svg",
+        tags: ["HTML", "CSS", "JavaScript"],
+        live: "https://akirabossd005.github.io/Portfolio/",
+        github: "https://github.com/AKIRABOSSD005/Portfolio"
+    },
+    {
+        title: "CLiMS: Cooperative Loan Management System for BASCPCC",
+        description: "A capstone project for BASCPCC, a web-based system for managing cooperative loans.",
+        image: "assets/pictures/clims.svg",
+        tags: ["HTML", "CSS", "JavaScript", "PHP", "AJAX", "MySQL", "Bootstrap"],
+        live: "https://bascpcc.com",
+        github: "https://github.com/AKIRABOSSD005/CLiMS"
+    },
+    {
+        title: "HRTS: Human Resources Ticketing System",
+        description: "A web-based ticketing system for managing HR requests and issues for Metro North Medical Center and Hospital Inc.",
+        image: "assets/pictures/hrts.svg",
+        tags: ["HTML", "CSS", "JavaScript", "PHP", "AJAX", "MySQL"],
+        live: "https://mnmch.com/hrts/",
+        github: "https://github.com/AKIRABOSSD005/HRTS"
+    },
+    {
+        title: "Portfolio Website",
+        description: "A personal portfolio website built to showcase my work.",
+        image: "assets/pictures/project1.jpg",
+        tags: ["HTML", "CSS", "JavaScript"],
+        live: "#",
+        github: "#"
+    },
+    {
+        title: "Portfolio Website",
+        description: "A personal portfolio website built to showcase my work.",
+        image: "assets/pictures/project1.jpg",
+        tags: ["HTML", "CSS", "JavaScript"],
+        live: "#",
+        github: "#"
+    },
+    {
+        title: "Portfolio Website",
+        description: "A personal portfolio website built to showcase my work.",
+        image: "assets/pictures/project1.jpg",
+        tags: ["HTML", "CSS", "JavaScript"],
+        live: "#",
+        github: "#"
+    }
+];
+
+// Render projects
+document.addEventListener("DOMContentLoaded", function () {
+    const projectsGrid = document.getElementById('projectsGrid');
+    if (!projectsGrid) return;
+
+    projects.forEach(project => {
+        const tagsHtml = project.tags.map(tag =>
+            `<span class="badge bg-light text-dark border me-1 mb-1">${tag}</span>`
+        ).join('');
+        const card = `
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 border-0 rounded-4">
+                    <img src="${project.image}" class="card-img-top rounded-top-4"
+                        alt="Project Screenshot" style="background:#e0e0e0; height:140px; object-fit:cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold mb-1">${project.title}</h5>
+                        <p class="card-text mb-2 text-muted" style="font-size:1rem;">
+                            ${project.description}
+                        </p>
+                        <div class="mb-3">${tagsHtml}</div>
+                        <div class="mt-auto d-flex gap-2">
+                            <a href="${project.live}" class="btn btn-danger px-4 fw-semibold rounded-pill" target="_blank">Live</a>
+                            <a href="${project.github}" class="btn btn-outline-dark px-4 fw-semibold rounded-pill" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        projectsGrid.insertAdjacentHTML('beforeend', card);
+    });
+});
