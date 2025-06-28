@@ -354,3 +354,109 @@ body {
     font-size: 1.1rem;
   }
 }
+
+
+/* Add Project Modal Enhancements */
+.add-project-image-col {
+    background: #f7f8fa;
+    border-right: 1.5px solid #ececec;
+    min-height: 350px;
+    height: 100%;
+    justify-content: center;
+}
+.add-project-image-wrapper {
+    background: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 0 4px 24px rgba(60,60,60,0.10);
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    min-height: 180px;
+    max-width: 260px;
+    max-height: 260px;
+}
+#addProjectModal .modal-content {
+    min-height: 420px;
+    max-width: 900px;
+    margin: auto;
+}
+@media (min-width: 992px) {
+    #addProjectModal .modal-dialog {
+        max-width: 950px;
+    }
+    #addProjectModal .modal-content {
+        min-height: 520px;
+    }
+    .add-project-image-col {
+        min-height: 420px;
+    }
+}
+@media (max-width: 767.98px) {
+    .add-project-image-col {
+        border-right: none;
+        border-bottom: 1.5px solid #ececec;
+        min-height: 160px;
+        padding: 1.5rem 0.5rem !important;
+    }
+    .add-project-image-wrapper {
+        min-width: 100px;
+        min-height: 100px;
+        max-width: 140px;
+        max-height: 140px;
+        padding: 0.5rem;
+    }
+    #addProjectModal .modal-content {
+        border-radius: 0 !important;
+        min-height: unset;
+    }
+}
+
+/* Responsive tweaks for Add Project Modal */
+@media (max-width: 767.98px) {
+    #addProjectModal .modal-content {
+        border-radius: 0 !important;
+    }
+    #addProjectModal .col-md-5,
+    #addProjectModal .col-md-7 {
+        padding: 2rem 1rem !important;
+    }
+    #addProjectModal img#projectImagePreview {
+        max-height: 120px !important;
+    }
+}
+
+/* Skills Modal Card Styles */
+#skillsModal .card {
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+#skillsModal .card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(60,60,60,0.13);
+}
+#skillsModal .card-title {
+    font-size: 1.08rem;
+    letter-spacing: 0.2px;
+}
+#skillsModal .card-body {
+    padding: 1.5rem 1rem;
+}
+
+#skillsModal .card-body .mb-3 {
+    height: 120px !important;
+}
+#skillsModal .card-body img {
+    height: 70px !important;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+#skillsModal .btn-outline-dark {
+    border-width: 2px;
+}
+@media (max-width: 767.98px) {
+    #skillsModal .card-body {
+        padding: 1.1rem 0.5rem;
+    }
+}

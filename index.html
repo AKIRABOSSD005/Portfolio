@@ -37,7 +37,10 @@
                             <a class="nav-link" href="#projects">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pages/skills.html">Skills</a>
+                            <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal"
+                                data-bs-target="#skillsModal">
+                                Skills
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal"
@@ -110,8 +113,10 @@
                                     <span class="badge bg-light text-dark border me-1 mb-1">JavaScript</span>
                                 </div>
                                 <div class="mt-auto d-flex gap-2">
-                                    <a href="https://akirabossd005.github.io/Portfolio/" class="btn btn-danger px-4 fw-semibold rounded-pill">Live</a>
-                                    <a href="https://github.com/AKIRABOSSD005/Portfolio" class="btn btn-outline-dark px-4 fw-semibold rounded-pill">GitHub</a>
+                                    <a href="https://akirabossd005.github.io/Portfolio/"
+                                        class="btn btn-danger px-4 fw-semibold rounded-pill">Live</a>
+                                    <a href="https://github.com/AKIRABOSSD005/Portfolio"
+                                        class="btn btn-outline-dark px-4 fw-semibold rounded-pill">GitHub</a>
                                 </div>
                             </div>
                         </div>
@@ -137,8 +142,10 @@
                                     <span class="badge bg-light text-dark border me-1 mb-1">Bootstrap</span>
                                 </div>
                                 <div class="mt-auto d-flex gap-2">
-                                    <a href="https://bascpcc.com  " class="btn btn-danger px-4 fw-semibold rounded-pill">Live</a>
-                                    <a href="https://github.com/AKIRABOSSD005/CLiMS" class="btn btn-outline-dark px-4 fw-semibold rounded-pill">GitHub</a>
+                                    <a href="https://bascpcc.com  "
+                                        class="btn btn-danger px-4 fw-semibold rounded-pill">Live</a>
+                                    <a href="https://github.com/AKIRABOSSD005/CLiMS"
+                                        class="btn btn-outline-dark px-4 fw-semibold rounded-pill">GitHub</a>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +158,8 @@
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title fw-bold mb-1">HRTS: Human Resources Ticketing System</h5>
                                 <p class="card-text mb-2 text-muted" style="font-size:1rem;">
-                                    A  web-based ticketing system for managing HR requests and issues for Metro North Medical Center and Hospital Inc.
+                                    A web-based ticketing system for managing HR requests and issues for Metro North
+                                    Medical Center and Hospital Inc.
                                 </p>
                                 <div class="mb-3">
                                     <span class="badge bg-light text-dark border me-1 mb-1">HTML</span>
@@ -162,8 +170,10 @@
                                     <span class="badge bg-light text-dark border me-1 mb-1">MySQL</span>
                                 </div>
                                 <div class="mt-auto d-flex gap-2">
-                                    <a href="https://mnmch.com/hrts/" class="btn btn-danger px-4 fw-semibold rounded-pill">Live</a>
-                                    <a href="https://github.com/AKIRABOSSD005/HRTS" class="btn btn-outline-dark px-4 fw-semibold rounded-pill">GitHub</a>
+                                    <a href="https://mnmch.com/hrts/"
+                                        class="btn btn-danger px-4 fw-semibold rounded-pill">Live</a>
+                                    <a href="https://github.com/AKIRABOSSD005/HRTS"
+                                        class="btn btn-outline-dark px-4 fw-semibold rounded-pill">GitHub</a>
                                 </div>
                             </div>
                         </div>
@@ -332,113 +342,232 @@
         </div>
     </div>
 
+    <!-- Add Project Modal -->
+    <div class="modal fade" id="addProjectModal" tabindex="-1" aria-labelledby="addProjectModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content p-0" style="border-radius: 18px; overflow: hidden;">
+                <div class="row g-0 h-100 flex-column flex-md-row">
+                    <!-- Left: Image Upload/Preview -->
+                    <div
+                        class="col-12 col-md-5 add-project-image-col d-flex flex-column align-items-center justify-content-center p-4">
+                        <label for="projectImageInput" class="w-100 text-center d-flex flex-column align-items-center">
+                            <div class="add-project-image-wrapper mb-3">
+                                <img id="projectImagePreview" src="assets/pictures/placeholder.svg" alt="Project Image"
+                                    class="img-fluid rounded-4 shadow-sm"
+                                    style="max-height:260px; min-height:120px; min-width:120px; object-fit:cover; background:#e0e0e0;">
+                            </div>
+                            <button type="button" class="btn btn-outline-secondary btn-sm mb-2"
+                                style="width: 140px;">Choose Image</button>
+                            <input type="file" id="projectImageInput" accept="image/*" class="d-none">
+                        </label>
+                    </div>
+                    <!-- Right: Input Fields -->
+                    <div class="col-12 col-md-7 text-dark bg-white p-4">
+                        <h5 class="fw-bold mb-3" id="addProjectModalLabel">Add New Project</h5>
+                        <form id="addProjectForm">
+                            <div class="mb-3">
+                                <label for="projectTitle" class="form-label">Project Title *</label>
+                                <input type="text" class="form-control" id="projectTitle" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="projectDescription" class="form-label">Description *</label>
+                                <textarea class="form-control" id="projectDescription" rows="3" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="projectTags" class="form-label">Tags (comma separated)</label>
+                                <input type="text" class="form-control" id="projectTags"
+                                    placeholder="e.g. HTML, CSS, JavaScript">
+                            </div>
+                            <div class="mb-3 row gx-2">
+                                <div class="col-12 col-sm-6 mb-2 mb-sm-0">
+                                    <input type="url" class="form-control" id="projectLiveLink" placeholder="Live Link">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="url" class="form-control" id="projectGithubLink"
+                                        placeholder="GitHub Link">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-end gap-2">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-danger">Add Project</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
+    <!-- Skills Modal -->
+    <div class="modal fade" id="skillsModal" tabindex="-1" aria-labelledby="skillsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content p-0" style="border-radius: 18px; overflow: hidden;">
+                <div class="bg-white p-4">
+                    <h2 class="fw-bold text-center text-dark mb-4" id="skillsModalLabel" style="font-size:2.2rem;">My
+                        Skills</h2>
+                    <div class="row g-4 justify-content-center">
+                        <!-- Skill Card -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="card h-100 border-0 rounded-4 shadow-sm bg-white">
+                                <div class="card-body d-flex flex-column align-items-center p-4">
+                                    <div class="mb-3 d-flex align-items-center justify-content-center rounded-3"
+                                        style="background:#f3f3f3; width:100%; height:120px;">
+                                        <img src="assets/icons/html.svg" alt="HTML" style="height:70px;">
+                                    </div>
+                                    <h5 class="card-title fw-bold text-dark mb-3">HTML</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Skill Card -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="card h-100 border-0 rounded-4 shadow-sm bg-white">
+                                <div class="card-body d-flex flex-column align-items-center p-4">
+                                    <div class="mb-3 d-flex align-items-center justify-content-center rounded-3"
+                                        style="background:#f3f3f3; width:100%; height:120px;">
+                                        <img src="assets/icons/css.svg" alt="CSS" style="height:70px;">
+                                    </div>
+                                    <h5 class="card-title fw-bold text-dark mb-3">CSS</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Skill Card -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="card h-100 border-0 rounded-4 shadow-sm bg-white">
+                                <div class="card-body d-flex flex-column align-items-center p-4">
+                                    <div class="mb-3 d-flex align-items-center justify-content-center rounded-3"
+                                        style="background:#f3f3f3; width:100%; height:120px;">
+                                        <img src="assets/icons/javascript.svg" alt="JavaScript" style="height:70px;">
+                                    </div>
+                                    <h5 class="card-title fw-bold text-dark mb-3">JavaScript</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Skill Card -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="card h-100 border-0 rounded-4 shadow-sm bg-white">
+                                <div class="card-body d-flex flex-column align-items-center p-4">
+                                    <div class="mb-3 d-flex align-items-center justify-content-center rounded-3"
+                                        style="background:#f3f3f3; width:100%; height:120px;">
+                                        <img src="assets/icons/php.svg" alt="PHP" style="height:70px;">
+                                    </div>
+                                    <h5 class="card-title fw-bold text-dark mb-3">PHP</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Skill Card -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="card h-100 border-0 rounded-4 shadow-sm bg-white">
+                                <div class="card-body d-flex flex-column align-items-center p-4">
+                                    <div class="mb-3 d-flex align-items-center justify-content-center rounded-3"
+                                        style="background:#f3f3f3; width:100%; height:120px;">
+                                        <img src="assets/icons/mysql.svg" alt="MySQL" style="height:70px;">
+                                    </div>
+                                    <h5 class="card-title fw-bold text-dark mb-3">MySQL</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Skill Card -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="card h-100 border-0 rounded-4 shadow-sm bg-white">
+                                <div class="card-body d-flex flex-column align-items-center p-4">
+                                    <div class="mb-3 d-flex align-items-center justify-content-center rounded-3"
+                                        style="background:#f3f3f3; width:100%; height:120px;">
+                                        <img src="assets/icons/bootstrap.svg" alt="Bootstrap" style="height:70px;">
+                                    </div>
+                                    <h5 class="card-title fw-bold text-dark mb-3">Bootstrap</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Skill Card -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="card h-100 border-0 rounded-4 shadow-sm bg-white">
+                                <div class="card-body d-flex flex-column align-items-center p-4">
+                                    <div class="mb-3 d-flex align-items-center justify-content-center rounded-3"
+                                        style="background:#f3f3f3; width:100%; height:120px;">
+                                        <img src="assets/icons/computer.svg" alt="Hardware" style="height:70px;">
+                                    </div>
+                                    <h5 class="card-title fw-bold text-dark mb-3 text-center">Computer Hardware
+                                        Troubleshooting</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Skill Card -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="card h-100 border-0 rounded-4 shadow-sm bg-white">
+                                <div class="card-body d-flex flex-column align-items-center p-4">
+                                    <div class="mb-3 d-flex align-items-center justify-content-center rounded-3"
+                                        style="background:#f3f3f3; width:100%; height:120px;">
+                                        <img src="assets/icons/printer.svg" alt="Printer" style="height:70px;">
+                                    </div>
+                                    <h5 class="card-title fw-bold text-dark mb-3 text-center">Printer Troubleshooting
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Skill Card -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="card h-100 border-0 rounded-4 shadow-sm bg-white">
+                                <div class="card-body d-flex flex-column align-items-center p-4">
+                                    <div class="mb-3 d-flex align-items-center justify-content-center rounded-3"
+                                        style="background:#f3f3f3; width:100%; height:120px;">
+                                        <img src="assets/icons/network.svg" alt="Network" style="height:70px;">
+                                    </div>
+                                    <h5 class="card-title fw-bold text-dark mb-3 text-center">Network Troubleshooting
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Skill Card -->
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="card h-100 border-0 rounded-4 shadow-sm bg-white">
+                                <div class="card-body d-flex flex-column align-items-center p-4">
+                                    <div class="mb-3 d-flex align-items-center justify-content-center rounded-3"
+                                        style="background:#f3f3f3; width:100%; height:120px;">
+                                        <img src="assets/icons/systemAdmin.svg" alt="System Administration"
+                                            style="height:70px;">
+                                    </div>
+                                    <h5 class="card-title fw-bold text-dark mb-3 text-center">System Administration</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end mt-4">
+                        <button type="button" class="btn btn-outline-dark px-4 fw-semibold rounded-pill"
+                            data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyBpGvpKdoDraeGXtE_pvfvv0W_iD1At-TQ",
+            authDomain: "portfolio-3a566.firebaseapp.com",
+            projectId: "portfolio-3a566",
+            storageBucket: "portfolio-3a566.firebasestorage.app",
+            messagingSenderId: "501875707207",
+            appId: "1:501875707207:web:5ceeb81e00119009a49062",
+            measurementId: "G-0HM297C4Z7"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
 
     <script src="assets/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function reloadPage() {
-            window.location.reload();
-        }
-
-        // Highlight the active page in the navbar
-        document.addEventListener("DOMContentLoaded", function () {
-            const currentPage = window.location.pathname.split("/").pop();
-            const navItems = document.querySelectorAll(".nav-item");
-
-            navItems.forEach(item => {
-                const link = item.querySelector("a");
-                if (link && link.getAttribute("href") === currentPage) {
-                    item.classList.add("active");
-                }
-            });
-        });
-    </script>
-    <script>
-        const toggleBtn = document.getElementById("themeToggle");
-
-        toggleBtn.addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
-
-            // Optional: Update icon
-            if (document.body.classList.contains("dark-mode")) {
-                toggleBtn.textContent = "☀️";
-            } else {
-                toggleBtn.textContent = "🌙";
-            }
-        });
-    </script>
-
-    <script>
-        function randomPastelColor() {
-            const hue = Math.floor(Math.random() * 360);
-            return `hsl(${hue}, 70%, 85%)`;
-        }
-
-        const hero = document.querySelector('.hero-section');
-
-        // Responsive safe zones
-        let safeZoneLeft, safeZoneRight;
-        if (window.innerWidth < 768) { // Mobile
-            safeZoneLeft = 0;
-            safeZoneRight = 100;
-        } else if (window.innerWidth < 992) { // Tablet
-            safeZoneLeft = 20;
-            safeZoneRight = 80;
-        } else { // Desktop
-            safeZoneLeft = 30;
-            safeZoneRight = 70;
-        }
-
-        for (let i = 0; i < 20; i++) {
-            const circle = document.createElement('span');
-            circle.className = 'bg-circle';
-            const size = Math.random() * 60 + 40; // 40px to 100px
-            circle.style.width = `${size}px`;
-            circle.style.height = `${size}px`;
-            circle.style.background = randomPastelColor();
-            circle.style.top = `${Math.random() * 80}%`;
-
-            let left;
-            if (window.innerWidth < 768) {
-                if (Math.random() < 0.5) {
-                    left = Math.random() * 10;
-                } else {
-                    left = Math.random() * 10 + 90;
-                }
-            } else {
-                if (Math.random() < 0.5) {
-                    left = Math.random() * safeZoneLeft;
-                } else {
-                    left = Math.random() * (100 - safeZoneRight) + safeZoneRight;
-                }
-            }
-            circle.style.left = `${left}%`;
-
-            circle.style.pointerEvents = 'none';
-            hero.appendChild(circle);
-        }
-
-        // Parallax hover effect
-        const circles = document.querySelectorAll('.bg-circle');
-        hero.addEventListener('mousemove', function (e) {
-            const rect = hero.getBoundingClientRect();
-            const x = (e.clientX - rect.left) / rect.width - 0.5; // -0.5 to 0.5
-            const y = (e.clientY - rect.top) / rect.height - 0.5;
-            circles.forEach((circle, i) => {
-                // Each circle moves a different amount for a layered effect
-                const moveX = x * (10 + i * 2);
-                const moveY = y * (10 + i * 2);
-                circle.style.transform = `translate(${moveX}px, ${moveY}px)`;
-            });
-        });
-        hero.addEventListener('mouseleave', function () {
-            circles.forEach(circle => {
-                circle.style.transform = '';
-            });
-        });
-    </script>
-
+    <script src="assets/js/style.js"></script>
 </body>
 
 </html>
