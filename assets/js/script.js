@@ -136,7 +136,7 @@ document.querySelector('label[for="projectImageInput"] button').onclick = functi
 // Example project data array
 const projects = [
     {
-        title: "Portfolio Website",
+        title: "My Personal Portfolios",
         description: "A personal portfolio website built to showcase my work and skills.",
         image: "assets/pictures/portfolio.svg",
         tags: ["HTML", "CSS", "JavaScript"],

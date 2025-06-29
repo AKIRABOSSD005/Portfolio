@@ -370,8 +370,7 @@ body {
   #projects .card {
     min-height: 320px;
     border-radius: 1rem;
-    max-width: 360px;
-    margin: 0 auto 1.5rem auto; /* Center cards on small screens */
+    margin-left: auto;
   }
   #projects .card-title {
     font-size: 1.1rem;
