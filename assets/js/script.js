@@ -12,20 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-//Toggle Theme Mode
-const toggleBtn = document.getElementById("themeToggle");
-
-toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-
-    // Optional: Update icon
-    if (document.body.classList.contains("dark-mode")) {
-        toggleBtn.textContent = "☀️";
-    } else {
-        toggleBtn.textContent = "🌙";
-    }
-});
-
 //Circles Random Animation
 function randomPastelColor() {
     const hue = Math.floor(Math.random() * 360);
