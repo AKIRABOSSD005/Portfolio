@@ -218,20 +218,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// Show/hide Back to Top button based on scroll position
-const backToTopBtn = document.getElementById('backToTopBtn');
-window.addEventListener('scroll', function () {
-    // Show if scrolled down 200px and navbar is not visible
-    const navbar = document.querySelector('.navbar');
-    const navbarBottom = navbar.getBoundingClientRect().bottom;
-    if (window.scrollY > 200 && navbarBottom <= 0) {
-        backToTopBtn.style.display = 'block';
-    } else {
-        backToTopBtn.style.display = 'none';
-    }
-});
 
-// Scroll to top on button click
-backToTopBtn.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
