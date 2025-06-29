@@ -1,3 +1,23 @@
+/* Prevent horizontal scroll on all devices */
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Remove extra container padding on mobile */
+@media (max-width: 575.98px) {
+  .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .navbar {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}
+
+
+
 /* Global Styles */
 body {
   font-family: "Roboto", sans-serif;
@@ -8,6 +28,8 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
+
+
 
 /* NAVBAR */
 /* Default styles (mobile first) */
