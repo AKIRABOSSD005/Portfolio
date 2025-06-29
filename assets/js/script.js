@@ -219,19 +219,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-const backToTopBtn = document.getElementById('backToTopBtn');
-window.addEventListener('scroll', function () {
-  
-    const navbar = document.querySelector('.navbar');
-    const navbarBottom = navbar.getBoundingClientRect().bottom;
-    if (window.scrollY > 200 && navbarBottom <= 0) {
-        backToTopBtn.style.display = 'block';
-    } else {
-        backToTopBtn.style.display = 'none';
-    }
-});
-
-
-backToTopBtn.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
