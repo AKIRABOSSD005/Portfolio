@@ -9,10 +9,6 @@ body {
   overflow-x: hidden;
 }
 
-.container, .main {
-  border: 1px solid red;
-}
-
 /* NAVBAR */
 /* Default styles (mobile first) */
 .logo {
@@ -82,8 +78,6 @@ body {
   display: flex;
   align-items: center;
   position: relative; /* For absolute positioning of pseudo-elements */
-
-  /* background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><rect width="40" height="40" fill="%23e8eaf6"/><circle cx="20" cy="20" r="2" fill="%23c5cae9"/></svg>'); */
 }
 
 .hero-content {
