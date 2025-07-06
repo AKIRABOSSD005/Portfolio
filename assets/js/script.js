@@ -146,12 +146,12 @@ const projects = [
         github: "https://github.com/AKIRABOSSD005/HRTS"
     },
     {
-        title: "Portfolio Website",
-        description: "A personal portfolio website built to showcase my work.",
+        title: "ArcGuide: Tourism Hub for San Miguel, Bulacan",
+        description: "A Navigation and tourism hub website for San Miguel, Bulacan, providing information on local attractions and services.",
         image: "assets/pictures/project1.jpg",
-        tags: ["HTML", "CSS", "JavaScript"],
+        tags: ["HTML", "CSS", "JavaScript", "Laravel", "MySQL"],
         live: "#",
-        github: "#"
+        github: "https://github.com/AKIRABOSSD005/ArcGuide"
     },
     {
         title: "Portfolio Website",
